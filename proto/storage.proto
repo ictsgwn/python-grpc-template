@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package storage;
+
+service Storage {
+  rpc StoreMedia(StoreReq) returns (StoreRes) {}
+}
+
+message Metadata {
+  string id = 1;
+  string fullTitle = 2;
+  string description = 3;
+  string uploadTimestamp = 4;
+  string fileSize = 5;
+  string mediaFormat = 6;
+  UploadStatus uploadStatus= 7;
+  string errorMessage = 8;
+}
+
+
+message StoreRes {
+  Metadata mediaMeta = 1;
+  UploadStatus uploadStatus = 2;
+  StatusCode statusCode = 3;
+}
+
+
+message StoreReq {
+  Metadata mediaMeta = 1;
+  string tmpPath
+}
+
+enum UploadStatus {
+  NOT_STARTED = 0;
+  INTERIM_TRANSFER = 1;
+  COMPLETED = 2;
+  ERROR = 3;
+}
+
+enum StatusCode {
+  NONE = 0;
+  SUCCESS = 1;
+  FAILED = 2;
+}

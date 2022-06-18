@@ -1,0 +1,14 @@
+## gRPC dependencies
+grpcio
+grpcio-tools
+grpcio-health-checking
+
+## Green unit test
+green 
+coverage 
+mock
+typing
+pytest
+pylint
+pytest-cov
+flake8

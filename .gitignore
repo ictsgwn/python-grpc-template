@@ -1,0 +1,9 @@
+# Developer
+__pycache__
+.pytest*
+venv
+env
+*.pyc
+build
+.vscode
+tmp
